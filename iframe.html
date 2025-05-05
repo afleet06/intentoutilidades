@@ -8,15 +8,13 @@
   <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
 </head>
 <body>
-
-
 <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
 
 <iframe src="index.html" id="miIframe" frameborder="0"></iframe>
 
 <script>
   iFrameResize({
-    log: false,         // pon true para ver detalles en consola
+    log: true,         // pon true para ver detalles en consola
     checkOrigin: false, // desactívalo si estás haciendo pruebas entre dominios
   }, '#miIframe');
 </script>
