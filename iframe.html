@@ -2,31 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Iframe Resizer Avanzado</title>
+  <title>Iframe Resizer - Página principal</title>
   <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
   <style>
     iframe {
       width: 100%;
-      border: 1px solid #ccc;
-      margin-bottom: 30px;
+      border: none;
     }
   </style>
 </head>
 <body>
 
+  <iframe src="index.html" id="miIframe"></iframe>
 
-  <iframe src="index.html" id="iframe1" title="Iframe 1"></iframe>
- 
   <script>
     iFrameResize({
-      log: false,
-      checkOrigin: false,
-      autoResize: true,
-      heightCalculationMethod: 'max',  // método más fiable
-      scrolling: true,  // el iframe puede hacer scroll si es más pequeño
-      widthCalculationMethod: 'scroll',
-      resizeFrom: 'child'  // permite que el iframe avise al padre
-    }, 'iframe');
+      log: false,          // Activa para ver logs: true
+      checkOrigin: false   // Solo desactívalo para pruebas locales
+    }, '#miIframe');
   </script>
 
 </body>
