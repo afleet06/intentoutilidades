@@ -2,28 +2,50 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Iframe Resizer - Página principal</title>
-  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
-  <style>
-    iframe {
-      width: 100%;
-      border: none;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenido embebido</title>
+ <style>
+  .iframe-container {
+    position: relative;
+    display: inline-block;
+  }
+  .fullscreen-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 10;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+</style>
+
+<div class="iframe-container">
+  <button class="fullscreen-btn" onclick="openFullscreen()">Pantalla completa</button>
+  <iframe id="miIframe"
+    src="index.html"
+    width="600"
+    height="400"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<script>
+  function openFullscreen() {
+    var iframe = document.getElementById("miIframe");
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) { /* Safari */
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { /* IE11 */
+      iframe.msRequestFullscreen();
     }
-  </style>
-</head>
-<body>
-
-  <h1>Página principal</h1>
-  <p>El iframe de abajo se ajusta automáticamente a su contenido.</p>
-
-  <iframe src="index.html" id="miIframe"></iframe>
-
-  <script>
-    iFrameResize({
-      log: false,          // Activa para ver logs: true
-      checkOrigin: false   // Solo desactívalo para pruebas locales
-    }, '#miIframe');
-  </script>
-
+  }
+</script>
 </body>
 </html>
