@@ -11,7 +11,7 @@
   <iframe id="miIframe" src="index.html" width="100%" frameborder="0" scrolling="no" onload="ajustarIframeAltura(this)"></iframe>
 
 <script>
-  function ajustarIframeAltura(iframe) {
+  function ajustarIframeAltura(miIframe) {
     try {
       // Accede al documento interno y ajusta la altura
       iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
