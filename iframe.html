@@ -21,8 +21,15 @@
 </head>
 <body>
    <div class="contenedor">
-  <iframe src="index.html" width="1090" height="717" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen" allow id="miIframe"></iframe>
+ <iframe 
+  src="index.html" 
+  id="miIframe" 
+  frameborder="0" 
+  scrolling="no" 
+  style="width: 100%; border: none;">
+</iframe>
      </div>
+  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
    <script>
     iFrameResize({
       log: true,          // Activa para ver logs: true
