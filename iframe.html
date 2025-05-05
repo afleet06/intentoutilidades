@@ -5,20 +5,18 @@
   <style>
     body { margin: 0; padding: 0; }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
 </head>
 <body>
   <div>
-  <iframe id="miIframe" src="index.html" width="100%" frameborder="0" scrolling="no" onload="ajustarIframeAltura(this)"></iframe>
+
+<iframe src="index.html" id="miIframe" frameborder="0"></iframe>
 
 <script>
-  function ajustarIframeAltura(miIframe) {
-    try {
-      // Accede al documento interno y ajusta la altura
-      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    } catch (error) {
-      console.warn("No se pudo ajustar el iframe. ¿Es de otro dominio?");
-    }
-  }
+  iFrameResize({
+    log: false,         // pon true para ver detalles en consola
+    checkOrigin: false, // desactívalo si estás haciendo pruebas entre dominios
+  }, '#miIframe');
 </script>
 
   </div>
