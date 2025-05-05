@@ -54,6 +54,19 @@
     <div id="content"></div>
     <div id="spr0_64e873f8"><audio id="snd0_64e873f8" preload="metadata"><source src="data/sound1.mp3" type="audio/mpeg"/></audio><audio id="snd1_64e873f8" preload="metadata"><source src="data/sound2.mp3" type="audio/mpeg"/></audio><audio id="snd2_64e873f8" preload="metadata"><source src="data/sound3.mp3" type="audio/mpeg"/></audio><audio id="snd3_64e873f8" preload="metadata"><source src="data/sound1.mp3" type="audio/mpeg"/></audio><audio id="snd4_64e873f8" preload="metadata"><source src="data/sound2.mp3" type="audio/mpeg"/></audio><audio id="snd5_64e873f8" preload="metadata"><source src="data/sound2.mp3" type="audio/mpeg"/></audio><audio id="snd6_64e873f8" preload="metadata"><source src="data/sound2.mp3" type="audio/mpeg"/></audio><audio id="snd7_64e873f8" preload="metadata"><source src="data/sound2.mp3" type="audio/mpeg"/></audio><audio id="snd8_64e873f8" preload="metadata"><source src="data/sound2.mp3" type="audio/mpeg"/></audio><audio id="snd9_64e873f8" preload="metadata"><source src="data/sound2.mp3" type="audio/mpeg"/></audio><audio id="snd10_64e873f8" preload="metadata"><source src="data/sound2.mp3" type="audio/mpeg"/></audio></div>
     <script>
+		function pantallaCompletaDiv() {
+		  var elem = document.getElementById("content");
+	  
+		  if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		  } else if (elem.webkitRequestFullscreen) {
+			elem.webkitRequestFullscreen();
+		  } else if (elem.msRequestFullscreen) {
+			elem.msRequestFullscreen();
+		  }
+		}
+	  </script>
+	<script>
 		document.addEventListener("DOMContentLoaded", () => (function(startup){
 			function start(savedPresentationState)
 			{
