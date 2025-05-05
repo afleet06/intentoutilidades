@@ -1,26 +1,26 @@
+<!-- contenido.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Iframe Resizer - Página principal</title>
-  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
   <style>
-    iframe {
-      width: 100%;
-      border: none;
-    }
+    body { margin: 0; padding: 0; }
   </style>
 </head>
 <body>
+  <div>
+  <iframe id="miIframe" src="index.html" width="100%" frameborder="0" scrolling="no" onload="ajustarIframeAltura(this)"></iframe>
 
-  <iframe src="index.html" id="miIframe"></iframe>
+<script>
+  function ajustarIframeAltura(iframe) {
+    try {
+      // Accede al documento interno y ajusta la altura
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    } catch (error) {
+      console.warn("No se pudo ajustar el iframe. ¿Es de otro dominio?");
+    }
+  }
+</script>
 
-  <script>
-    iFrameResize({
-      log: false,          // Activa para ver logs: true
-      checkOrigin: false   // Solo desactívalo para pruebas locales
-    }, '#miIframe');
-  </script>
-
+  </div>
 </body>
 </html>
