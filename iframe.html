@@ -23,31 +23,16 @@
     border-radius: 5px;
   }
 </style>
+  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer/js/iframeResizer.min.js"></script>
 </head>
   <body>
-<div class="iframe-container">
-  <button class="fullscreen-btn" onclick="openFullscreen()">Pantalla completa</button>
-  <iframe id="miIframe"
-    src="index.html"
-    width="600"
-    height="400"
-    scrolling="no"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
+<iframe src="index.html" id="miIframe" frameborder="0"></iframe>
 
 <script>
-  function openFullscreen() {
-    var iframe = document.getElementById("miIframe");
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) { /* Safari */
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { /* IE11 */
-      iframe.msRequestFullscreen();
-    }
-  }
+  iFrameResize({
+    log: false,         // pon true para ver detalles en consola
+    checkOrigin: false, // desactívalo si estás haciendo pruebas entre dominios
+  }, '#miIframe');
 </script>
 </body>
 </html>
